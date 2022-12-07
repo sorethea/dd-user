@@ -9,8 +9,7 @@ return new class extends Migration {
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string("phone")->unique()->nullable();
-            $table->removeColumn("email");
-            $table->string("email")->unique()->nullable()->change();
+            $table->string("email")->nullable()->change();
         });
     }
 
