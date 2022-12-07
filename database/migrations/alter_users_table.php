@@ -9,13 +9,15 @@ return new class extends Migration {
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string("phone")->unique()->nullable();
-            $table->string("email")->nullable()->change();
+            $table->removeColumn("email");
+            $table->string("email")->unique()->nullable()->change();
         });
     }
 
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->removeColumn("email");
             $table->string("email")->unique()->change();
         });
     }
