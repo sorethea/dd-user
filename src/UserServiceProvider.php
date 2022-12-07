@@ -9,6 +9,7 @@ class UserServiceProvider extends PluginServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        $package->name("dd-user");
+        $package->name("dd-user")
+            ->hasMigration("");
     }
 }
