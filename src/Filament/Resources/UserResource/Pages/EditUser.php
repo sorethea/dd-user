@@ -1,10 +1,10 @@
 <?php
 
-namespace Sorethea\DdUser\Filament\Resources\UserResource\Pages;
+namespace App\Filament\Resources\UserResource\Pages;
 
-use Filament\Pages\Actions\DeleteAction;
+use App\Filament\Resources\UserResource;
+use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Sorethea\DdUser\Filament\Resources\UserResource;
 
 class EditUser extends EditRecord
 {
@@ -13,7 +13,7 @@ class EditUser extends EditRecord
     protected function getActions(): array
     {
         return [
-            DeleteAction::make(),
+            Actions\DeleteAction::make(),
         ];
     }
 }

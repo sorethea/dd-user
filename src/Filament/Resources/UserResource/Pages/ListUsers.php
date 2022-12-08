@@ -1,10 +1,10 @@
 <?php
 
-namespace Sorethea\DdUser\Filament\Resources\UserResource\Pages;
+namespace App\Filament\Resources\UserResource\Pages;
 
-use Filament\Pages\Actions\CreateAction;
+use App\Filament\Resources\UserResource;
+use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
-use Sorethea\DdUser\Filament\Resources\UserResource;
 
 class ListUsers extends ListRecords
 {
@@ -13,7 +13,7 @@ class ListUsers extends ListRecords
     protected function getActions(): array
     {
         return [
-            CreateAction::make(),
+            Actions\CreateAction::make(),
         ];
     }
 }
