@@ -2,8 +2,9 @@
 
 namespace Sorethea\DdUser\Filament\Resources\UserResource\Pages;
 
-use Filament\Pages\Actions;
+use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Sorethea\DdUser\Filament\Resources\UserResource;
 
 class ListUsers extends ListRecords
 {
@@ -12,7 +13,7 @@ class ListUsers extends ListRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

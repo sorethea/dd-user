@@ -2,8 +2,8 @@
 
 namespace Sorethea\DdUser\Filament\Resources\UserResource\Pages;
 
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Sorethea\DdUser\Filament\Resources\UserResource;
 
 class CreateUser extends CreateRecord
 {
