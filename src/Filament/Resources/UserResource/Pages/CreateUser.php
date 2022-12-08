@@ -1,8 +1,8 @@
 <?php
 
-namespace Sorethea\DdUser\Filament\Resources\UserResource\Pages;
+namespace App\Filament\Resources\UserResource\Pages;
 
-use Sorethea\DdUser\Filament\Resources\UserResource;
+use App\Filament\Resources\UserResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
