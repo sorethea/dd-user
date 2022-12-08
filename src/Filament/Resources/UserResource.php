@@ -4,7 +4,7 @@ namespace Sorethea\DdUser\Filament\Resources;
 
 use Sorethea\DdUser\Filament\Resources\UserResource\Pages;
 use Sorethea\DdUser\Filament\Resources\UserResource\RelationManagers;
-use App\Models\User;
+use Sorethea\DdUser\Models\User;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
