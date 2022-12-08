@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Sorethea\DdUser\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -13,7 +14,7 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        $user = Sorethea\Dduser\Models\User::create([
+        $user = User::create([
             "name"=>"Administrator",
             "email"=>"admin@demo.com",
             "password"=>Hash::make("12345678"),
