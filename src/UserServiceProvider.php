@@ -24,7 +24,7 @@ class UserServiceProvider extends PluginServiceProvider
     {
         if($this->app->runningInConsole()){
             $this->publishes([
-                __DIR__.'/database/seeds/UserSeeder.php'=>database_path("seeders/UserSeeder.php")
+                __DIR__.'/../database/seeds/UserSeeder.php'=>database_path("seeders/UserSeeder.php")
             ],"dd-user-seeds");
         }
     }
