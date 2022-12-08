@@ -19,4 +19,13 @@ class UserServiceProvider extends PluginServiceProvider
             ->hasConfigFile("dd-user")
             ->hasMigration("alter_users_table");
     }
+
+    public function boot() :void
+    {
+        if($this->app->runningInConsole()){
+            $this->publishes([
+                __DIR__.'../database/seeds/UserSeeder.php'=>database_path("seeders/UserSeeder.php")
+            ],"dd-user-seeds");
+        }
+    }
 }
