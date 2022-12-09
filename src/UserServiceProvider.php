@@ -3,6 +3,7 @@
 namespace Sorethea\DdUser;
 
 use Sorethea\DdUser\Filament\Resources\UserResource;
+use Sorethea\DdUser\AuthServiceProvider;
 use Filament\Facades\Filament;
 use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
@@ -20,12 +21,17 @@ class UserServiceProvider extends PluginServiceProvider
             ->hasMigration("alter_users_table");
     }
 
-    public function boot() :void
+    public function packageBooted(): void
     {
         if($this->app->runningInConsole()){
             $this->publishes([
                 __DIR__.'/../database/seeds/UserSeeder.php'=>database_path("seeders/UserSeeder.php")
             ],"dd-user-seeds");
         }
+    }
+
+    public function packageRegistered(): void
+    {
+        $this->app->register(AuthServiceProvider::class);
     }
 }
