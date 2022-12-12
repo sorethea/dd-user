@@ -14,7 +14,4 @@ class UserServiceProvider extends ServiceProvider
         $this->app->register(AuthServiceProvider::class);
     }
 
-    public function boot()
-    {
-    }
 }
