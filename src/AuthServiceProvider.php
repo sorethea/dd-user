@@ -2,8 +2,8 @@
 
 namespace Sorethea\DdUser;
 
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Sorethea\DdUser\Models\User;
 use Sorethea\DdUser\Policies\UserPolicy;
 
 
