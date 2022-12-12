@@ -3,6 +3,9 @@
 namespace Sorethea\DdUser\Filament\Resources;
 
 use App\Models\User;
+use Faker\Provider\Text;
+use Filament\Forms\Components\BelongsToManyMultiSelect;
+use Filament\Forms\Components\TextInput;
 use Sorethea\DdUser\Filament\Resources\UserResource\Pages;
 use Sorethea\DdUser\Filament\Resources\UserResource\RelationManagers;
 use Filament\Resources\Form;
@@ -26,7 +29,10 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make("name")->required(),
+                TextInput::make("email")->unique(fn($record)=>$record),
+                TextInput::make("phone")->unique(fn($record)=>$record),
+                BelongsToManyMultiSelect::make("roles")->relationship("roles","name"),
             ]);
     }
 
@@ -34,7 +40,11 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make("name")->searchable()->sortable(),
+                Tables\Columns\TextColumn::make("email")->searchable()->sortable(),
+                Tables\Columns\TextColumn::make("phone")->searchable()->sortable(),
+                Tables\Columns\TextColumn::make("roles_count")
+                    ->label(trans("dd-permission::permission.roles"))->counts("roles"),
             ])
             ->filters([
                 //
