@@ -2,16 +2,14 @@
 
 namespace Sorethea\DdUser\Filament\Resources;
 
+use App\Models\User;
 use Sorethea\DdUser\Filament\Resources\UserResource\Pages;
 use Sorethea\DdUser\Filament\Resources\UserResource\RelationManagers;
-use Sorethea\DdUser\Models\User;
-use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+
 
 class UserResource extends Resource
 {
